@@ -47,14 +47,15 @@ class Reservation
         }
     }
 
-    public function leaveComment($comment, $commentDate)
+    public function leaveComment($comment)
     {
         if ($this->status === "PAID") { // méthode de réservation par carte
             $this->status = "COMMENT"; // methode de commentaire si carte
             $this->comment = $comment; // commentaire de réservation
+            $this->commentDate = new DateTime(); // date de commentaire
         }
     }
-
+  
 
     // méthode pour changer le statut de la réservation
     public function cancel()
@@ -77,4 +78,13 @@ $cleaningOption = false; // option de nettoyage, j'ai choisi faux
 // et que le constructeur est appelé automatiquement lors de la création de l'objet
 $reservation = new Reservation($name, $email, $place, $startDate, $endDate, $cleaningOption);
 
-var_dump($reservation);
+//var_dump($reservation); // affiche les informations de réservation
+//var_dump($reservation->totalPrice); // affiche le prix total de la réservation
+//var_dump($reservation->nightPrice); // affiche le prix de la nuit
+//var_dump($reservation->cleaningPrice); // affiche le prix de nettoyage
+//var_dump($reservation->bookedAt); // affiche la date de réservation
+//var_dump($reservation->status); // affiche le statut de réservation
+//var_dump($reservation->paid); // affiche le prix payé
+//var_dump($reservation->cancel); // affiche le prix annulé
+//var_dump($reservation->comment); // affiche le commentaire de réservation
+//var_dump($reservation->commentDate); // affiche la date de commentaire
