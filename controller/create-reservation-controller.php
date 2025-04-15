@@ -3,7 +3,7 @@
 require_once('../config/config.php');
 require_once('../model/Reservation.model.php');
 
-$message = " ";
+$message = null;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$reservation = new Reservation($name, $email, $place, $startDate, $endDate, $cleaningOption);
 
 	// je créé un message incluant le prix de la réservation (calculé automatiquement par ma classe Reservation)
-	$message = "Votre réservation est confirmée, au prix de :" . $reservation->totalPrice;
+	//$message = "Votre réservation est confirmée, au prix de :" . $reservation->totalPrice;
 
 }
 

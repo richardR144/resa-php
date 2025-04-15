@@ -29,7 +29,6 @@
         <h1>Créer une réservation</h1>
 
         <form method="POST">
-
             <label>Nom
                 <input type="text" name="name">
             </label>
@@ -59,11 +58,20 @@
             </label>
 
             <button type="submit">Créer la réservation</button>
-
         </form>
-
-
-        <h2><?php echo $message; ?></h2>
+        <?php 
+        if (!is_null($reservation)) { ?>
+            <div>
+                <p>Votre réservation est confirmée, au prix de : <?= $reservation->totalPrice ?> </p>
+                <p>Nom : <?= $reservation->name ?></p>
+                <p>Email : <?= $reservation->email ?></p>
+                <p>Lieu : <?= $reservation->place ?></p>
+                <p>Date de début : <?= $reservation->startDate->format('d/m/Y') ?></p>
+                <p>Date de fin : <?= $reservation->endDate->format('d/m/Y') ?></p>
+                <p>Option de ménage : <?= $reservation->cleaningOption ? 'Oui' : 'Non' ?></p>
+                <p>Prix total : <?= $reservation->totalPrice ?> </p>
+            </div>
+       <?php } ?>
     </main>
     <footer></footer>
 </body>
