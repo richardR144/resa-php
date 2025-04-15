@@ -97,3 +97,7 @@ $reservation->leaveComment("C'est une belle réservation !"); //message de comme
 //var_dump($reservation->cancel); // affiche le prix annulé
 //var_dump($reservation->comment); // affiche le commentaire de réservation
 //var_dump($reservation->commentDate); // affiche la date de commentaire
+
+//dans la classe je peux modifier les propriétées sont en public, je peux 
+//y accéder /les modifier si elles sont en privée je suis obliger moi ou un 
+//autre développeur sera obligé de passer par le constructeur pour modifier les propriétés de la classe

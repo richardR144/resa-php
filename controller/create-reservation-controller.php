@@ -2,6 +2,7 @@
 
 require_once('../config/config.php');
 require_once('../model/Reservation.model.php');
+require_once('../model/reservation-repository.php');
 
 $message = null;
 $error = null;
@@ -27,10 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		$cleaningOption = false;
 	}
 
-    try 
+    try // je récupère une réservation : une instance de classe, en lui envoyant les données attendues
     {
         $reservation = new Reservation($name, $email, $place, $startDate, $endDate, $cleaningOption);
-    } catch (Exception $e) {
+        persistReservation($reservation); // je stocke la réservation dans la session
+        
+    } catch (Exception $e) { // je gère les erreurs de réservation
         $error = $e->getMessage(); // je récupère le message d'erreur
     }
     // je vérifie si la date de début est supérieure à la date de fin
