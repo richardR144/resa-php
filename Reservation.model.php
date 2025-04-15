@@ -43,6 +43,8 @@ class Reservation
     {
         if ($this->status === "CART") { // méthode de réservation par carte
             $this->status = "PAID"; // methode de paiement si carte
+            //c'est là que je peux mettre la méthode stipe pour que le paiement soit effectué
+            // $this->paymentMethod = "Stripe"; // méthode de paiement
             $this->paid = new DateTime(); // date de paiement
         }
     }
@@ -52,7 +54,7 @@ class Reservation
         if ($this->status === "PAID") { // méthode de réservation par carte
             $this->status = "COMMENT"; // methode de commentaire si carte
             $this->comment = $comment; // commentaire de réservation
-            $this->commentDate = new DateTime(); // date de commentaire
+            $this->commentDate = new DateTime(); // date de commentaire pas besoin de le passer en paramètre ça se fait automatiquement
         }
     }
   
@@ -78,6 +80,8 @@ $cleaningOption = false; // option de nettoyage, j'ai choisi faux
 // et que le constructeur est appelé automatiquement lors de la création de l'objet
 $reservation = new Reservation($name, $email, $place, $startDate, $endDate, $cleaningOption);
 
+$reservation->paid(); // méthode de réservation par carte
+$reservation->leaveComment("C'est une belle réservation !"); //message de commentaire
 //var_dump($reservation); // affiche les informations de réservation
 //var_dump($reservation->totalPrice); // affiche le prix total de la réservation
 //var_dump($reservation->nightPrice); // affiche le prix de la nuit
