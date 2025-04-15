@@ -60,16 +60,22 @@
             <button type="submit">Créer la réservation</button>
         </form>
         <?php 
+            if (!is_null($error)) { ?>
+                <p>La réservation n'a pas été effectuée ! <?php echo $error; ?></p>
+        <?php 
+    } ?>
+
+        <?php 
         if (!is_null($reservation)) { ?>
             <div>
-                <p>Votre réservation est confirmée, au prix de : <?= $reservation->totalPrice ?> </p>
-                <p>Nom : <?= $reservation->name ?></p>
-                <p>Email : <?= $reservation->email ?></p>
-                <p>Lieu : <?= $reservation->place ?></p>
-                <p>Date de début : <?= $reservation->startDate->format('d/m/Y') ?></p>
-                <p>Date de fin : <?= $reservation->endDate->format('d/m/Y') ?></p>
-                <p>Option de ménage : <?= $reservation->cleaningOption ? 'Oui' : 'Non' ?></p>
-                <p>Prix total : <?= $reservation->totalPrice ?> </p>
+                <p>Votre réservation est confirmée, au prix de : <?php echo $reservation->totalPrice ?> </p>
+                <p>Nom : <?php echo $reservation->name ?></p>
+                <p>Email : <?php echo $reservation->email ?></p>
+                <p>Lieu : <?php echo $reservation->place ?></p>
+                <p>Date de début : <?php echo $reservation->startDate->format('d/m/Y') ?></p>
+                <p>Date de fin : <?php echo $reservation->endDate->format('d/m/Y') ?></p>
+                <p>Option de ménage : <?php echo $reservation->cleaningOption ? 'Oui' : 'Non' ?></p>
+                <p>Prix total : <?php echo $reservation->totalPrice ?> </p>
             </div>
        <?php } ?>
     </main>

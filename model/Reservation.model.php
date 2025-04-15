@@ -25,6 +25,10 @@ class Reservation
     // le constructeur est une méthode spéciale qui est appelée automatiquement lors de la création d'un objet 
     public function __construct($name, $email, $place, $startDate, $endDate, $cleaningOption)
     {
+        if (strlen($name) < 2) 
+        { // vérification de la longueur du nom
+            throw new Exception("Le nom doit contenir au moins 2 caractères.");
+        }
         $this->name = $name; // nom de réservation
         $this->email = $email;
         $this->place = $place;;
