@@ -11,10 +11,10 @@ function persistReservation($reservation) {
 function findReservationForUser() {
     session_start();
 
-    if (isset($_SESSION['reservation'])) {
-        return $_SESSION['reservation'];
+    if ((array_key_exists('reservation', $_SESSION))) {
+        return $_SESSION['reservation']; // je récupère la réservation de l'utilisateur
     } else {
-        return null;
+        return null; // si pas de réservation, je retourne null
     }
 
 }

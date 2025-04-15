@@ -20,7 +20,7 @@ class Reservation
     public $cancel; // prix annulé
     public $comment; // commentaire de réservation
     public $commentDate; // date de commentaire
-    public $userId; // id de l'utilisateur connecté
+    
     //creation de la fonction _constucteur
     // le constructeur est une méthode spéciale qui est appelée automatiquement lors de la création d'un objet 
     public function __construct($name, $email, $place, $startDate, $endDate, $cleaningOption)
@@ -53,7 +53,7 @@ class Reservation
             $this->paid = new DateTime(); // date de paiement
         }
     }
-
+        //laisser un commentaire
     public function leaveComment($comment)
     {
         if ($this->status === "PAID") { // méthode de réservation par carte
@@ -97,6 +97,7 @@ $reservation->leaveComment("C'est une belle réservation !"); //message de comme
 //var_dump($reservation->cancel); // affiche le prix annulé
 //var_dump($reservation->comment); // affiche le commentaire de réservation
 //var_dump($reservation->commentDate); // affiche la date de commentaire
+
 
 //dans la classe je peux modifier les propriétées sont en public, je peux 
 //y accéder /les modifier si elles sont en privée je suis obliger moi ou un 

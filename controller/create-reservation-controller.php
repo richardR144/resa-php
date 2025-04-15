@@ -52,5 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 //var_dump($message);
 //var_dump($name, $place, $startDate, $endDate, $cleaningOption);
 
+$reservationForUser = findReservationForUser(); // je récupère la réservation de l'utilisateur
+//var_dump($reservationForUser); // je vérifie si la réservation est bien stockée dans la session
 
 require_once('../view/create-resa-view.php');
