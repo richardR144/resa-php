@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$startDate = new DateTime($_POST['start-date']);
 	$endDate =  new DateTime($_POST['end-date']);
 
+
 	// je regarde si cleaning option a été sélectionné et je transforme la valeur
 	// de l'input en true ou false
 	if ($_POST['cleaning-option'] === "on") {
@@ -31,6 +32,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$message = "Votre réservation est confirmée, au prix de :" . $reservation->totalPrice;
 
 }
+
+//var_dump($reservation);
+//var_dump($message);
+//var_dump($name, $place, $startDate, $endDate, $cleaningOption);
+//var_dump($userId);
 
 
 

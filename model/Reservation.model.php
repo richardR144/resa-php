@@ -20,6 +20,7 @@ class Reservation
     public $cancel; // prix annulé
     public $comment; // commentaire de réservation
     public $commentDate; // date de commentaire
+    public $userId; // id de l'utilisateur connecté
     //creation de la fonction _constucteur
     // le constructeur est une méthode spéciale qui est appelée automatiquement lors de la création d'un objet 
     public function __construct($name, $email, $place, $startDate, $endDate, $cleaningOption)
