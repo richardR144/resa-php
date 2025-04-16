@@ -6,7 +6,7 @@ require_once('../model/Reservation.model.php');
 
 
 
-
+$reservationForUser = findReservationForUser();
 
 
 
