@@ -16,5 +16,4 @@ function findReservationForUser() {
     } else {
         return null; // si pas de réservation, je retourne null
     }
-
 }

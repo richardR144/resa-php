@@ -18,10 +18,10 @@
     <header>
         <nav>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Inscription</li>
+                <li>Contacts</li>
+                <li>Connexion</li>
+                <li><img src="logoSite" alt="logo"></li>
             </ul>
         </nav>
     </header>
@@ -66,7 +66,7 @@
     } ?>
 
         <?php 
-        if (!is_null($reservation)) { ?>
+        if (!is_null($reservationForUser)) { ?>
             <div>
                 <p>Votre réservation est confirmée, au prix de : <?php echo $reservationForUser->totalPrice ?> </p>
                 <p>Nom : <?php echo $reservationForUser->name ?></p>
@@ -80,7 +80,7 @@
        <?php } ?>
     </main>
     <footer>
-        
+
     </footer>
 </body>
 
