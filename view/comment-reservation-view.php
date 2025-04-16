@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="../asset/style.css">
     <title>Document</title>
 </head>
-<body>
-<main>
+<body>  
 
-<main>
+    <main>
 
-<h1>Commentaire sur votre séjour</h1> 
+        <h1>Commentaire sur votre séjour</h1> 
 
     <?php require_once('../view/comment-reservation-view.php')?> 
 
@@ -22,11 +21,8 @@
     <input type="text" name="comment" placeholder="Votre commentaire" required>
     <button type="submit">Commenter le sejour</button> 
 
-    <p><?php echo $commentMessage?></p>
+    <p><?php echo $leaveComment?></p>
 </form>
-
-    
-
 
 </main>
 

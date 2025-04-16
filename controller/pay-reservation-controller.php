@@ -9,6 +9,8 @@ require_once('../model/Reservation.model.php');
     $reservationForUser = findReservationForUser();
     $payMessage = ""; 
 
+   
+
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
         if (!is_null ($reservationForUser)) {
