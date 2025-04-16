@@ -12,16 +12,14 @@
 
     <main>
 
-        <h1>Commentaire sur votre séjour</h1> 
+        <h1>Laisser un commentaire sur votre séjour</h1> 
+        <?php require_once('../view/partial/_resume-reservation-view.php')?> 
 
-    <?php require_once('../view/comment-reservation-view.php')?> 
-
-
-<form method="post">
+<form method="POST">
+    <label>
     <input type="text" name="comment" placeholder="Votre commentaire" required>
+    </label>
     <button type="submit">Commenter le sejour</button> 
-
-    <p><?php echo $leaveComment?></p>
 </form>
 
 </main>

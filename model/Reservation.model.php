@@ -57,7 +57,7 @@ class Reservation
     public function leaveComment($comment)
     {
         if ($this->status === "PAID") { // méthode de réservation par carte
-            $this->status = "COMMENT"; // methode de commentaire si carte
+            $this->status = "COMMENTED"; // methode de commentaire si carte
             $this->comment = $comment; // commentaire de réservation
             $this->commentDate = new DateTime(); // date de commentaire pas besoin de le passer en paramètre ça se fait automatiquement
         }

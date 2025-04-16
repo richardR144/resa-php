@@ -1,0 +1,11 @@
+<?php
+
+//Moteur de réécriture Sur le serveur Apache, le module de réécriture d'URL 
+//est souvent utilisé pour créer des URL conviviales. Cela peut être fait en 
+//ajoutant des règles dans un fichier `.htaccess`. Voici un exemple de ce à 
+//quoi cela pourrait ressembler :
+?>
+# Redirige toutes les requêtes vers index.php dans le dossier public
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
