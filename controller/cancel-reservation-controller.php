@@ -6,23 +6,14 @@ require_once('../model/Reservation.model.php');
 
 
 
+$cancelMessage = "";
 $reservationForUser = findReservationForUser();
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {  // je vérifie si le formulaire a été envoyé
-    $reservationForUser = findReservationForUser(); // je récupère la réservation de l'utilisateur
-    if ($reservationForUser) { // je vérifie si la réservation existe
-        $reservationForUser->cancel(); // j'annule la réservation
-        persistReservation($reservationForUser); // je stocke la réservation dans la session
-        echo "Réservation annulée avec succès."; // j'affiche un message de succès, sinon
-    } else {
-        echo "Aucune réservation trouvée."; // j'affiche un message d'erreur
-    }
-}
+if ($_SERVER["REQUEST_METHOD"] === "POST") { // Vérification de la méthode POST
+        $reservationForUser->cancel(); // Annulation de la réservation
+        persistReservation($reservationForUser); // Enregistrement de la réservation annulée
+        $cancelMessage = "Votre réservation a été annulée avec succès."; // Message de confirmation
 
-
-
-
-
-
+    } 
 
 require_once('../view/cancel-reservation-view.php');
