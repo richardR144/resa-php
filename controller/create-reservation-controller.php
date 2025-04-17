@@ -18,15 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$endDate =  new DateTime($_POST['endDate']); // je transforme la date envoyée par l'utilisateur en objet DateTime
     // je vérifie si la date de début est supérieure à la date de fin
 
-
+	$cleaningOption = false;
 	// je regarde si cleaning option a été sélectionné et je transforme la valeur
 	// de l'input en true ou false
-	if ($_POST['cleaningOption'] === "on") {
+	if (array_key_exists("cleaningOption", $_POST)) {
 		$cleaningOption = true;
-	} else 
-    {
-		$cleaningOption = false;
 	}
+    
 
     try // je récupère une réservation : une instance de classe, en lui envoyant les données attendues
     {
