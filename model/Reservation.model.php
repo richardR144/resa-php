@@ -25,15 +25,18 @@ class Reservation
     // le constructeur est une méthode spéciale qui est appelée automatiquement lors de la création d'un objet 
     public function __construct($name, $email, $place, $startDate, $endDate, $cleaningOption)
     {
-        if (strlen($name) < 2) 
+        if (strlen($name) < 2) //si le nom est inférieur à 2 caractères on ne peut faire la suite (on lui donne des regles de validation)
         { // vérification de la longueur du nom
             throw new Exception("Le nom doit contenir au moins 2 caractères.");
         }
         $this->name = $name; // nom de réservation
         $this->email = $email;
         $this->place = $place;;
-        $this->startDate = $startDate;
-        $this->endDate = $endDate;
+        $this->startDate = $startDate;  // date de début de réservation
+        $this->endDate = $endDate;  // date de fin de réservation
+        //if ($this->startDate > $this->endDate) { // vérification de la date de début et de fin
+        // throw new Exception("La date de début doit être inférieure à la date de fin.");
+        //}
         $this->nightPrice = 10000; // prix de la nuit
         $this->cleaningOption = false; // option de nettoyage, j'ai choisi faux pour que ce ne soit pas obligatoire
         // si l'option de nettoyage est activée, le prix de nettoyage est ajouté au prix total
