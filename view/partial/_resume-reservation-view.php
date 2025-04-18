@@ -18,7 +18,7 @@
             <!-- Affiche sous la forme d'un tableau les informations de la réservation -->
             <p>Nom : <?php echo $reservationForUser['name']; ?></p>
             <p>Lieu : <?php echo $reservationForUser['place']; ?></p>
-            <p>Dates : <?php echo $reservationForUser['start_date']->format('d-m-y'); ?> / <?php echo $reservationForUser->endDate->format('d-m-y'); ?></p>
+            <p>Dates : <?php echo $reservationForUser['start_date']; ?> / <?php echo $reservationForUser['endDate']; ?></p>
             <p>Prix total : <?php echo $reservationForUser['total_price']; ?></p>
             <p>Option de ménage ? : <?php echo $reservationForUser['cleaning_option'] ? "oui" : "non"; ?></p>
             <p>Statut : <?php echo $reservationForUser['status']; ?></p>

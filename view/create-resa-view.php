@@ -65,19 +65,6 @@
         <?php 
     } ?>
 
-        <?php 
-        if (!is_null($reservationForUser)) { ?>
-            <div>
-                <p>Votre réservation est confirmée, au prix de : <?php echo $reservationForUser->totalPrice ?> </p>
-                <p>Nom : <?php echo $reservationForUser->name ?></p>
-                <p>Email : <?php echo $reservationForUser->email ?></p>
-                <p>Lieu : <?php echo $reservationForUser->place ?></p>
-                <p>Date de début : <?php echo $reservationForUser->startDate->format('d/m/Y') ?></p>
-                <p>Date de fin : <?php echo $reservationForUser->endDate->format('d/m/Y') ?></p>
-                <p>Option de ménage : <?php echo $reservationForUser->cleaningOption ? 'Oui' : 'Non' ?></p>
-                <p>Prix total : <?php echo $reservationForUser->totalPrice ?> </p>
-            </div>
-       <?php } ?>
     </main>
     <footer>
 
